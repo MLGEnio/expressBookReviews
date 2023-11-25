@@ -22,7 +22,6 @@ app.use("/customer/auth/*", function auth(req, res, next) {
   // Example: Check JWT token validity
   try {
     const token = req.headers.authorization.split(" ")[1];
-    console.log(req.headers.authorization);
     jwt.verify(token, "SECRET_KEY");
     next();
   } catch (error) {
